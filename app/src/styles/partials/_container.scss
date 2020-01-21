@@ -1,0 +1,21 @@
+.container {
+	margin: 0 1em;
+}
+
+.topic-container {
+	display: none;
+	.typed-string {
+		display: none;
+	}
+
+	h1 {
+		margin-bottom: 0.5em;
+	}
+}
+.active {
+	display: block;
+}
+
+.counter-container {
+	margin-bottom: 1em;
+}

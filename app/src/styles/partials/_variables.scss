@@ -1,0 +1,30 @@
+$color-black: #000;
+$color-white: #fff;
+$color-yellow:#fff33d;
+$color-blue: #0048ff;
+$color-red:#fc3e46;
+$padding-one: 1em;
+$title-family: "Rubik", sans-serif;
+$text-family: "Roboto", sans-serif;
+
+$breakpoints: (
+	"phone":        375px,
+	"phone-wide":   480px,
+	"phablet":      560px,
+	"tablet-small": 640px,
+	"tablet":       768px,
+	"tablet-wide":  1024px,
+	"desktop":      1248px,
+	"desktop-wide": 1440px
+);
+@mixin mq($width, $type: min) {
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+		@if $type == max {
+			$width: $width - 1px;
+		}
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+}

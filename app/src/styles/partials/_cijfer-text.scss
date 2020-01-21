@@ -1,0 +1,93 @@
+.cijfer-text-container {
+	margin-top: 1em;
+	.numbers {
+		display: flex;
+		.number-container {
+			text-align: center;
+			flex: 1;
+			&:first-of-type {
+				margin-right: 1em;
+			}
+			.big-number {
+				font-weight: 600;
+				margin: 0;
+				font-family: $title-family;
+				font-size: 3em;
+				line-height: normal;
+
+				.bigger-number {
+					font-size: 3em;
+				}
+			}
+			.migratieachtergrond-rectangle{
+				height: 30px;
+				width: 100%;
+				border-radius: 8px;
+				margin-bottom: 1em;
+			}
+			.red {
+				background-color: $color-red;
+			}
+			.blue {
+				background-color: $color-blue;
+			}
+			p {
+				margin: 0;
+
+				&:last-of-type {
+					margin-bottom: 1em;
+				}
+			}
+
+		}
+	}
+}
+
+.medium-numbers {
+	text-align: center;
+	.medium-container {
+		margin-bottom: 1em;
+		p {
+			margin: 0;
+		}
+		.number-container {
+			display: flex;
+			.medium-number-container{
+				flex: 1;
+				&:first-of-type {
+					margin-right: 1em;
+				}
+				.medium-number {
+					font-weight: 600;
+					margin: 0;
+					font-family: $title-family;
+					font-size: 1.5em;
+					line-height: normal;
+
+					.bigger-number {
+						font-size: 1.5em;
+					}
+				}
+				.migratieachtergrond-rectangle{
+					height: 30px;
+					width: 100%;
+					border-radius: 8px;
+					margin-bottom: 0.5em;
+				}
+				.red {
+					background-color: $color-red;
+				}
+				.blue {
+					background-color: $color-blue;
+				}
+				p {
+					margin: 0;
+
+					&:last-of-type {
+						margin-bottom: 1em;
+					}
+				}
+			}
+		}
+	}
+}

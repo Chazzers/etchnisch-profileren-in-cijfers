@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+       <title>Wapen categorie&euml;n van de collectie</title>
+       <link rel="stylesheet" href="scripts/bundle.css" type="text/css">
+       <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+     </head>
+     <body>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li><img src="images/logo.svg" alt=""></li>
+            </ul>
+        </nav>
+        <h1>Verhouding van gevonden wapens van de collectie per gebied</h1>
+
+        <div class="chart-container">
+            <div id="chart1" class="chart">
+                <div class="custom-select">
+                    <select name="gebieden-lijst" class="select">
+                        <option value="kies-gebied">-- Kies een gebied --</option>
+                    </select>
+                </div>
+                <div class="svg-container"></div>
+                <div id="table1" class="table"></div>
+            </div>
+            <div id="chart2" class="chart">
+                <div class="custom-select">
+                    <select name="gebieden-lijst" class="select">
+                        <option value="kies-gebied">-- Kies een gebied --</option>
+                    </select>
+                </div>
+                <div class="svg-container"></div>
+                <div class="table"></div>
+            </div>
+        </div>
+        <script src="scripts/bundle.js"></script>
+     </body>
+ </html>

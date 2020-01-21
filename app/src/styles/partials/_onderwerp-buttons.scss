@@ -1,0 +1,27 @@
+.onderwerp-buttons-container{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 1em 0;
+
+	.onderwerp-button {
+		flex: 45%;
+		background-color: $color-yellow;
+		border: none;
+		box-shadow: 8px 8px 8px rgba(0,0,0,0.2);
+		padding: 1.5em 0.5em;
+		font-family: $text-family;
+		font-size: 1em;
+		margin-bottom: 1em;
+		font-weight: 600;
+
+
+		&:first-of-type{
+			margin-right: 1em;
+
+		}
+		&:last-of-type {
+			margin-left: 1em;
+		}
+	}
+}

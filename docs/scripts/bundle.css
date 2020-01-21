@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #f1c399;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif; }
+  body nav {
+    background-color: #6f4e53;
+    padding: 1em; }
+    body nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between; }
+      body nav ul li {
+        color: #f1c399; }
+        body nav ul li img {
+          width: 30px;
+          height: 30px; }
+  body .chart-container {
+    display: flex;
+    padding: 0 1em; }
+    body .chart-container .chart {
+      flex: 1;
+      display: flex;
+      flex-direction: column; }
+      body .chart-container .chart:first-of-type {
+        justify-content: flex-start;
+        align-items: flex-end; }
+      body .chart-container .chart:last-of-type {
+        justify-content: flex-start;
+        align-items: flex-start; }
+      body .chart-container .chart #table1 {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 4em; }
+      body .chart-container .chart .table-row {
+        display: flex;
+        max-width: 200px;
+        align-items: center;
+        border-bottom: solid black 1px;
+        height: 1.5em;
+        border-left: solid black 1px; }
+        body .chart-container .chart .table-row:last-child {
+          border-bottom: none; }
+        body .chart-container .chart .table-row .legend-color {
+          border-right: solid black 1px;
+          width: 2em;
+          height: 100%; }
+        body .chart-container .chart .table-row .legend-type {
+          padding-left: 1em;
+          height: 100%;
+          width: 100px;
+          border-right: solid black 1px; }
+        body .chart-container .chart .table-row .legend-amount {
+          height: 100%;
+          padding-left: 1em;
+          width: 50px; }
+        body .chart-container .chart .table-row p {
+          margin: 0;
+          padding: 0; }
+  body .svg-container {
+    display: flex; }
+  body h1 {
+    color: #6f4e53;
+    text-align: center; }
+  body .node:hover circle {
+    stroke: black; }
+  body .bubble-container {
+    transition: all 0.1s; }
