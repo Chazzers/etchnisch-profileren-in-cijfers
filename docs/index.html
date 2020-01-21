@@ -1,39 +1,336 @@
 <!DOCTYPE html>
- <html>
-     <head>
-       <title>Wapen categorie&euml;n van de collectie</title>
-       <link rel="stylesheet" href="scripts/bundle.css" type="text/css">
-       <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-     </head>
-     <body>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li><img src="images/logo.svg" alt=""></li>
-            </ul>
-        </nav>
-        <h1>Verhouding van gevonden wapens van de collectie per gebied</h1>
+<html>
 
-        <div class="chart-container">
-            <div id="chart1" class="chart">
-                <div class="custom-select">
-                    <select name="gebieden-lijst" class="select">
-                        <option value="kies-gebied">-- Kies een gebied --</option>
-                    </select>
-                </div>
-                <div class="svg-container"></div>
-                <div id="table1" class="table"></div>
-            </div>
-            <div id="chart2" class="chart">
-                <div class="custom-select">
-                    <select name="gebieden-lijst" class="select">
-                        <option value="kies-gebied">-- Kies een gebied --</option>
-                    </select>
-                </div>
-                <div class="svg-container"></div>
-                <div class="table"></div>
-            </div>
-        </div>
-        <script src="scripts/bundle.js"></script>
-     </body>
- </html>
+<head>
+	<link rel="stylesheet" href="scripts/bundle.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Rubik:700&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<header>
+		<div class="flex-parent">
+			<div class="flex-child">
+				<div class="logo">
+				</div>
+			</div>
+			<div class="titles flex-child">
+				<h1>Etnisch profileren in Amsterdam</h1>
+				<h2>Hoeveel gebeurt dat eigenlijk?</h2>
+			</div>
+			<div class="flex-child">
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="onderwerp-buttons-container">
+			<button type="button" name="button" class="onderwerp-button" value="aanleiding">Aanleiding</button>
+			<button type="button" name="button" class="onderwerp-button" value="beleving">Beleving</button>
+			<button type="button" name="button" class="onderwerp-button" value="vertrouwen">Vertrouwen</button>
+			<button type="button" name="button" class="onderwerp-button" value="controle">Controle</button>
+		</div>
+		<div class="topic-container" id="vertrouwen">
+			<div class="typed-string">
+				<h1>
+					Het vertrouwen in de politie
+				</h1>
+			</div>
+			<h1><span id="typed-vertrouwen"></span></h1>
+			<div class="cijfer-text-container">
+				<h3>
+					Hoe hebben de respondenten hun vertrouwen in de politie beoordeeld?
+				</h3>
+				<div class="numbers">
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">7</span>.3
+						</p>
+						<div class="migratieachtergrond-rectangle red">
+						</div>
+						<p>
+							is het gemiddelde wat <span class="bolder">Nederlanders</span> <span class="bold">zonder migratieachtergrond</span> geven aan hun vertrouwen.
+						</p>
+					</div>
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">6</span>.4
+						</p>
+						<div class="migratieachtergrond-rectangle blue">
+						</div>
+						<p>
+							is het gemiddelde wat <span class="bolder">Nederlanders</span> <span class="bold">met een niet-westerse migratieachtergrond</span> geven aan hun vertrouwen.
+						</p>
+					</div>
+				</div>
+				<div class="counter-container">
+					<p id="vertrouwen-heatmap-counter" class="counter"></p>
+					<p>Respondenten hebben deze vraag beantwoord</p>
+				</div>
+				<p>
+					Aan de respondenten is gevraagd om een <span class="bold">cijfer te geven van 1 tot en met 10</span> over hun <span class="bold">vertrouwen in de politie</span>. Op basis van de antwoorden van de subgroep (Nederlanders zonder migratieachtergrond en Nederlanders met een niet-Westerse migratieachtergrond) is het gemiddelde berekend.
+				</p>
+			</div>
+			<div class="cijfer-text-container">
+				<h3>
+					Heeft recent contact met de politie invloed op het vertrouwen in de politie?
+				</h3>
+				<div class="medium-numbers">
+					<div class="medium-container">
+						<div class="number-container">
+							<div class="medium-number-container">
+								<p class="medium-number">
+									<span class="bigger-number">7</span>.2
+								</p>
+								<div class="migratieachtergrond-rectangle red">
+								</div>
+								<p>Wel recent contact</p>
+							</div>
+							<div class="medium-number-container">
+								<p class="medium-number">
+									<span class="bigger-number">7</span>.2
+								</p>
+								<div class="migratieachtergrond-rectangle red">
+								</div>
+								<p>Geen recent contact</p>
+							</div>
+						</div>
+						<p><span class="bold">Nederlanders</span></p>
+						<p>zonder migratieachtergrond</p>
+					</div>
+					<div class="medium-container">
+						<div class="number-container">
+							<div class="medium-number-container">
+								<p class="medium-number">
+									<span class="bigger-number">7</span>.2
+								</p>
+								<div class="migratieachtergrond-rectangle red">
+								</div>
+								<p>Wel recent contact</p>
+							</div>
+							<div class="medium-number-container">
+								<p class="medium-number">
+									<span class="bigger-number">7</span>.2
+								</p>
+								<div class="migratieachtergrond-rectangle red">
+								</div>
+								<p>Geen recent contact</p>
+							</div>
+						</div>
+						<p><span class="bold">Nederlanders</span></p>
+						<p>zonder migratieachtergrond</p>
+					</div>
+				</div>
+				<div class="counter-container">
+					<p id="vertrouwen-heatmap-counter" class="counter"></p>
+					<p>Respondenten hebben deze vraag beantwoord</p>
+				</div>
+				<p>
+					Op basis van <span class="bold">wel of geen contact</span>
+					met de politie in de <span class="bold">afgelopen twaalf maanden</span>, worden de <span class="bold">gemiddelde scores</span>, hieronder weergegeven. Ook hier worden de verschillen in de subgroep (Nederlanders zonder migratieachtergrond en Nederlanders met een niet-Westerse migratieachtergrond) met elkaar vergeleken.
+				</p>
+			</div>
+			<div class="visualisatie-container" id="vertrouwen-heatmap">
+				<h3>
+					Hoe zijn de cijfers in het vertrouwen van de politie verdeeld?
+				</h3>
+				<div class="visualisatie">
+					<div class="svg-container" id="heatmap">
+					</div>
+				</div>
+				<div class="visualisatie-right">
+					<div class="legend">
+					</div>
+					<div class="counter-container">
+						<p id="vertrouwen-heatmap-counter" class="counter"></p>
+						<p>Respondenten hebben deze vraag beantwoord</p>
+					</div>
+				</div>
+				<p>
+					De heat map geeft een beeld van de <span class="bold">verdeling van de gegeven antwoorden</span>, door de respondenten. De grijstinten laten het aantal respondenten zien die dit cijfer hebben gegeven aan hun vertrouwen. Ook hier worden de verschillen in de subgroep (Nederlanders zonder migratieachtergrond en Nederlanders met een niet-Westerse migratieachtergrond) met elkaar vergeleken.
+				</p>
+			</div>
+			<div class="cijfer-text-container">
+				<h3>
+					Hoeveel procent van de respondenten geeft een voldoende aan hun vertrouwen in de politie?
+				</h3>
+				<div class="numbers">
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">92</span>%
+						</p>
+						<div class="migratieachtergrond-rectangle red">
+						</div>
+						<p>
+							van de <span class="bolder">Nederlanders</span> <span class="bold">zonder migratieachtergrond</span> geeft een voldoende aan het vertrouwen.
+						</p>
+					</div>
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">76</span>%
+						</p>
+						<div class="migratieachtergrond-rectangle blue">
+						</div>
+						<p>
+							van de <span class="bolder">Nederlanders</span> <span class="bold">met een niet-westerse migratieachtergrond</span> geeft een voldoende aan het vertrouwen.
+						</p>
+					</div>
+				</div>
+				<div class="counter-container">
+					<p id="vertrouwen-heatmap-counter" class="counter"></p>
+					<p>Respondenten hebben deze vraag beantwoord</p>
+				</div>
+				<p>
+					Het bovenstaande percentage representeert het aantal mensen die hun <span class="bold">vertrouwen in de politie een 6 of hoger geven</span>. De respondenten konden een cijfer kiezen van 1 tot en met 10. Ook hier worden de verschillen in de subgroep (Nederlanders zonder migratieachtergrond en Nederlanders met een niet-Westerse migratieachtergrond) met elkaar vergeleken.
+				</p>
+			</div>
+			<div class="cijfer-text-container">
+				<h3>
+					Heeft recent contact invloed op het vertrouwen in de politie?
+				</h3>
+				<p>
+					Op basis van wel of geen contact met de politie in de afgelopen twaalf maanden, is er onderscheid gemaakt in het aantal respondenten dat een voldoende geeft aan hun vertrouwen in de politie. De percentages van het aantal mensen die een voldoende geven (6 of hoger) aan hun vertrouwen, zijn hieronder weergegeven in de onderscheiding van wel/geen recent contact. De verschillen in de subgroep (Nederlanders zonder migratieachtergrond en Nederlanders met een niet-Westerse migratieachtergrond) worden met elkaar vergeleken.
+				</p>
+
+				<h3>
+					De respondenten die contact hadden in de afgelopen twaalf maanden en een voldoende gaven aan zijn/haar vertrouwen
+				</h3>
+				<div class="numbers">
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">90</span>%
+						</p>
+						<div class="migratieachtergrond-rectangle red">
+						</div>
+						<p>
+							van de <span class="bolder">Nederlanders</span> <span class="bold">zonder migratieachtergrond</span> geeft een voldoende aan het vertrouwen
+						</p>
+					</div>
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">65</span>%
+						</p>
+						<div class="migratieachtergrond-rectangle blue">
+						</div>
+						<p>
+							van de <span class="bolder">Nederlanders</span> <span class="bold">met een niet-westerse migratieachtergrond</span> geeft een voldoende aan het vertrouwen.
+						</p>
+					</div>
+				</div>
+				<h3>
+					De respondenten die geen contact hadden in de afgelopen twaalf maanden en een voldoende gaven aan zijn/haar vertrouwen
+				</h3>
+				<div class="numbers">
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">93</span>%
+						</p>
+						<div class="migratieachtergrond-rectangle red">
+						</div>
+						<p>
+							van de <span class="bolder">Nederlanders</span> <span class="bold">zonder migratieachtergrond</span> geeft een voldoende aan het vertrouwen
+						</p>
+					</div>
+					<div class="number-container">
+						<p class="big-number">
+							<span class="bigger-number">83</span>%
+						</p>
+						<div class="migratieachtergrond-rectangle blue">
+						</div>
+						<p>
+							van de <span class="bolder">Nederlanders</span> <span class="bold">met een niet-westerse migratieachtergrond</span> geeft een voldoende aan het vertrouwen.
+						</p>
+					</div>
+				</div>
+				<div class="counter-container">
+					<p id="vertrouwen-heatmap-counter" class="counter"></p>
+					<p>Respondenten hebben deze vraag beantwoord</p>
+				</div>
+			</div>
+		</div>
+		<div class="topic-container" id="beleving">
+			<div class="typed-string">
+				<h1>
+					Het vertrouwen in de politie
+				</h1>
+			</div>
+			<h1><span class="typed"></span></h1>
+			<div id="beleefd" class="visualisatie-container">
+				<h2>
+					<span class="bold"></span>
+				</h2>
+				<div class="options">
+					<input type="radio" name="filter" value="benaderd-door-politie" id="benaderd-door-politie" checked>
+					<label class="switch" for="benaderd-door-politie">Benaderd door politie</label>
+					<input type="radio" name="filter" value="zelf-politie-benaderd" id="zelf-politie-benaderd">
+					<label class="switch" for="zelf-politie-benaderd">Zelf politie benaderd</label>
+				</div>
+				<div class="visualisatie">
+					<div class="svg-container" id="stacked-barchart-beleefd">
+
+					</div>
+				</div>
+				<div class="visualisatie-right">
+					<div class="legend">
+					</div>
+					<div class="counter-container">
+						<p id="beleefd-counter" class="counter"></p>
+						<p>Respondenten hebben deze vraag beantwoord</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="luistert-goed" class="visualisatie-container not-first">
+				<h2>
+					<span class="bold"></span>
+				</h2>
+				<div class="options">
+					<input type="radio" name="filter-1" value="benaderd-door-politie" id="benaderd-door-politie-1" checked>
+					<label class="switch" for="benaderd-door-politie-1">Benaderd door politie</label>
+					<input type="radio" name="filter-1" value="zelf-politie-benaderd" id="zelf-politie-benaderd-1">
+					<label class="switch" for="zelf-politie-benaderd-1">Zelf politie benaderd</label>
+				</div>
+				<div class="visualisatie">
+					<div class="svg-container" id="stacked-barchart-luisterd-goed">
+
+					</div>
+				</div>
+				<div class="visualisatie-right">
+					<div class="legend">
+					</div>
+					<div class="counter-container">
+						<p id="luisterd-goed-counter" class="counter"></p>
+						<p>Respondenten hebben deze vraag beantwoord</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="rechtvaardig" class="visualisatie-container not-first">
+				<h2>
+					<span class="bold"></span>
+				</h2>
+				<div class="options">
+					<input type="radio" name="filter-2" value="benaderd-door-politie" id="benaderd-door-politie-2" checked>
+					<label class="switch" for="benaderd-door-politie-2">Benaderd door politie</label>
+					<input type="radio" name="filter-2" value="zelf-politie-benaderd" id="zelf-politie-benaderd-2">
+					<label class="switch" for="zelf-politie-benaderd-2">Zelf politie benaderd</label>
+				</div>
+				<div class="visualisatie">
+					<div class="svg-container" id="stacked-barchart-rechtvaardig">
+					</div>
+				</div>
+				<div class="visualisatie-right">
+					<div class="legend">
+					</div>
+					<div class="counter-container">
+						<p id="rechtvaardig-counter" class="counter"></p>
+						<p>Respondenten hebben deze vraag beantwoord</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="scripts/bundle.js"></script>
+</body>
+
+</html>
