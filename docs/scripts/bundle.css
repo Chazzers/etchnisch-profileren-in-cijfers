@@ -18,29 +18,6 @@
   width: 100%;
   height: 100%; }
 
-header {
-  background-color: #000;
-  padding: 1em; }
-  header .flex-parent {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column; }
-    header .flex-parent .flex-child {
-      flex: 1; }
-      header .flex-parent .flex-child:first-of-type {
-        padding-bottom: 1em; }
-      header .flex-parent .flex-child .logo {
-        background: left/contain no-repeat url("../images/logo.svg");
-        width: 100%;
-        height: 5em; }
-    header .flex-parent .titles h1 {
-      color: #fff33d;
-      font-size: 1.5em;
-      text-transform: uppercase; }
-    header .flex-parent .titles h2 {
-      color: #fff;
-      font-size: 1.25em; }
-
 * {
   box-sizing: border-box; }
 
@@ -91,6 +68,62 @@ html {
   margin: 0;
   height: 100%; }
 
+.onderwerp-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em 0; }
+  .onderwerp-buttons-container .onderwerp-button {
+    flex: 45%;
+    background-color: #fff33d;
+    border: none;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5em 0.5em;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    margin-bottom: 1em;
+    font-weight: 600; }
+    .onderwerp-buttons-container .onderwerp-button:nth-of-type(even) {
+      margin-left: 1em; }
+    .onderwerp-buttons-container .onderwerp-button:last-of-type {
+      max-width: calc(50% - 0.5em);
+      margin: auto; }
+
+header {
+  background-color: #000;
+  padding: 1em; }
+  header .flex-parent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+    header .flex-parent .flex-child {
+      flex: 1; }
+      header .flex-parent .flex-child:first-of-type {
+        padding-bottom: 1em; }
+      header .flex-parent .flex-child .logo {
+        background: left/contain no-repeat url("../images/logo.svg");
+        width: 100%;
+        height: 5em; }
+    header .flex-parent .titles h1 {
+      color: #fff33d;
+      font-size: 1.5em;
+      text-transform: uppercase; }
+    header .flex-parent .titles h2 {
+      color: #fff;
+      font-size: 1.25em; }
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none; }
+
 #vertrouwen-heatmap h2 {
   min-height: 57px; }
 
@@ -136,37 +169,16 @@ html {
     .legend .legend-item p {
       font-size: 10px; }
 
-.onderwerp-buttons-container {
+.pie-chart-viz-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 1em 0; }
-  .onderwerp-buttons-container .onderwerp-button {
-    flex: 45%;
-    background-color: #fff33d;
-    border: none;
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
-    padding: 1.5em 0.5em;
-    font-family: "Roboto", sans-serif;
-    font-size: 1em;
-    margin-bottom: 1em;
-    font-weight: 600; }
-    .onderwerp-buttons-container .onderwerp-button:first-of-type {
-      margin-right: 1em; }
-    .onderwerp-buttons-container .onderwerp-button:last-of-type {
-      margin-left: 1em; }
-
-div.tooltip {
-  position: absolute;
-  text-align: center;
-  width: 60px;
-  height: 28px;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 8px;
-  pointer-events: none; }
+  flex-direction: column; }
+  .pie-chart-viz-container .pie-chart-container {
+    flex: 1;
+    height: 300px; }
+    .pie-chart-viz-container .pie-chart-container .pie-chart {
+      background: center/contain no-repeat url("../images/Indicator_Beleving_Vis1.svg");
+      width: 100%;
+      height: 100%; }
 
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {

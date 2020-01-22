@@ -40,35 +40,36 @@
 
 .legend {
 	display: flex;
-	// .legend-group {
-	// flex: 1;
-
-
-
-	// &:last-of-type {
-	// 	border-left: solid 1px black;
-	// 	padding-left: 1em;
-	// }
 	.legend-item {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		// align-items: center;
 		padding: 0 0.25em;
 		justify-content: center;
 		align-items: center;
-		// &:first-of-type{
-		// 	margin-top: 0.5em;
-		// }
-		// border-right: solid 1px black;
 		.legend-color {
 			width: 100%;
 			height: 16px;
-			// margin-right: 1em;
 		}
 		p {
 			font-size: 10px;
 		}
 	}
-	// }
+}
+
+.pie-chart-viz-container {
+	display: flex;
+	flex-direction: column;
+	.pie-chart-container {
+		flex: 1;
+		height: 300px;
+		.pie-chart {
+			background: center / contain no-repeat url("../images/Indicator_Beleving_Vis1.svg");
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.pie-chart-legend {
+
+	}
 }

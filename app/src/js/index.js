@@ -15,13 +15,6 @@ import {CountUp} from "countup.js";
 import inView from "in-view";
 import * as d3 from "d3";
 
-const countUpOptions = {
-	useEasing: true,
-	useGrouping: true,
-	sepparator: ",",
-	decimal: "."
-};
-
 function responsivefy(svg) {
 	// container will be the DOM element
 	// that the svg is appended to
@@ -1739,8 +1732,37 @@ const stackedBarChart = document.querySelector("#stacked-barchart-beleefd");
 
 const heatmap = document.querySelector("#heatmap");
 
+const countUpOptions = {
+	useEasing: true,
+	useGrouping: true,
+	sepparator: ",",
+	decimal: "."
+};
+
+// Counters
+let counterErvaring1 = new CountUp("");
+let counterErvaring2 = new CountUp("");
+
+let counterBeleving1 = new Countup("");
+let counterBeleving2 = new CountUp("");
+let counterBeleving3 = new CountUp("");
+
+let counterAanleiding1 = new CountUp("");
+let counterAanleiding2 = new CountUp("");
+let counterAanleiding3 = new Countup("");
+let counterAanleiding4 = new CountUp("");
+
+let counterVertrouwen1 = new CountUp("");
+let counterVertrouwen2 = new CountUp("");
+let counterVertrouwen3 = new CountUp("");
+let counterVertrouwen4 = new CountUp("");
+let counterVertrouwen5 = new CountUp("");
 
 
+
+const counterArray = [];
+
+// inView("#")
 
 // inView("#heatmap")
 // 	.on("enter", () => countUp.update(300))
