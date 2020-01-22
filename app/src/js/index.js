@@ -1303,26 +1303,431 @@ function createStackedBarchartRechtvaardig() {
 	}
 }
 
+function createStackedBarchartTerecht() {
+	let data = [
+		{
+			categorie: "benaderd-door-politie",
+			afkomst: "Nederlands",
+			eens: 69,
+			oneens: 16,
+			neutraal: 15,
+			total: 100
+		},
+		{
+			categorie: "benaderd-door-politie",
+			afkomst: "Niet westers",
+			eens: 49,
+			oneens: 32,
+			neutraal: 19,
+			total: 100
+		}
+	];
+
+	var keys = ["eens", "neutraal", "oneens"];
+
+	const margin = {top: 5, right: 10, bottom: 100, left: 15};
+	const width = 500 - margin.left - margin.right;
+	const height = 600 - margin.top - margin.bottom;
+	// append the svg object to the body of the page
+	const svg = d3
+		.select("#ervaring-terecht")
+		.select(".svg-container")
+		.append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.call(responsivefy)
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	var x = d3
+		.scaleBand()
+		.range([margin.left, width - margin.right])
+		.padding(0.1);
+
+	var y = d3.scaleLinear().rangeRound([height - margin.bottom, margin.top]);
+
+	var xAxis = svg
+		.append("g")
+		.attr("transform", `translate(0,${height - margin.bottom})`)
+		.attr("class", "x-axis");
+
+	var yAxis = svg
+		.append("g")
+		.attr("transform", `translate(${margin.left},0)`)
+		.attr("class", "y-axis");
+
+	var z = d3
+		.scaleOrdinal()
+		.range(["black", "gray", "darkgray"])
+		.domain(keys);
+
+		return update();
+
+	function update(input, speed) {
+
+		y.domain([0, d3.max(data, d => d3.sum(keys, k => +d[k]))]).nice();
+
+		svg.selectAll(".y-axis").call(d3.axisLeft(y).ticks(null, "s"));
+
+		x.domain(data.map(d => d.afkomst));
+
+		svg.selectAll(".x-axis")
+			.call(d3.axisBottom(x).tickSizeOuter(0))
+			.call(g =>
+				g
+					.select(".tick:first-of-type text")
+					.attr("y", 30)
+					.html(
+						'<tspan font-size="14" class="myText" text-align="left"><tspan font-weight="600">Nederlanders</tspan> zonder</tspan><tspan text-align="left" class="myText" font-size="14">migratieachtergrond</tspan>'
+					)
+					.selectAll(".myText")
+					.attr("dy", "1.2em")
+					.attr("x", "0")
+					.select(".myText:last-of-type")
+					.attr("x", 20)
+			)
+			.call(g =>
+				g
+					.selectAll(".tick:first-of-type")
+					.append("rect")
+					.attr("fill", "#fc3e46")
+					.attr("y", "10")
+					.attr("x", "-80")
+					.attr("width", 160)
+					.attr("height", 20)
+					.attr("rx", 3)
+			)
+			.call(g =>
+				g
+					.selectAll(".tick:last-of-type text")
+					.attr("y", 30)
+					.html(
+						'<tspan font-size="14" class="myText"><tspan font-weight="600">Nederlanders</tspan> met</tspan><tspan class="myText" font-size="14">niet-westerse</tspan><tspan font-size="14" class="myText"> migratieachtergrond</tspan>'
+					)
+					.selectAll(".myText")
+					.attr("dy", "1.2em")
+					.attr("x", "0")
+			)
+			.call(g =>
+				g
+					.selectAll(".tick:last-of-type")
+					.append("rect")
+					.attr("fill", "#0048ff")
+					.attr("y", "10")
+					.attr("x", "-80")
+					.attr("width", 160)
+					.attr("height", 20)
+					.attr("rx", 3)
+			);
+
+		var group = svg
+			.selectAll("g.layer")
+			.data(d3.stack().keys(keys)(data), d => d.key);
+
+		group
+			.enter()
+			.append("g")
+			.classed("layer", true)
+			.attr("fill", d => z(d.key));
+
+
+		var bars = svg
+			.selectAll("g.layer")
+			.selectAll("rect")
+			.data(d => d, e => e.data.afkomst);
+
+		const barsEnter = bars
+			.enter()
+			.append("g")
+			.attr("class", "chart");
+
+		barsEnter
+			.append("rect")
+			.attr("width", x.bandwidth())
+			.attr("x", d => x(d.data.afkomst))
+			.attr("y", d => y(d[1]))
+			.attr("height", d => y(d[0]) - y(d[1]));
+
+		const text = svg
+			.selectAll("g.layer")
+			.selectAll("text")
+			.data(d => d, e => e.data.afkomst);
+
+		const textEnter = text
+			.enter()
+			.append("text")
+			.attr("text-anchor", "middle")
+			.attr("font-size", "20px")
+			.attr("font-family", "Roboto")
+			.style("fill", "#fff33d")
+			.attr("x", d => x(d.data.afkomst) + x.bandwidth() / 2)
+			.attr("y", d => y(d[1]) + (y(d[0]) - y(d[1])) / 2 + 10)
+			.text(d => {
+				if (d[0] === 0) {
+					return d[1] + "%";
+				} else {
+					return d[1] - d[0] + "%";
+				}
+			});
+
+		const legendData = [
+			{
+				key: "(Zeer) Onterecht",
+				color: "black"
+			},
+			{
+				key: "Neutraal",
+				color: "grey"
+			},
+			{
+				key: "(Zeer) terecht",
+				color: "darkgrey"
+			}
+		];
+
+		const legend = d3
+			.select("#ervaring-terecht")
+			.select(".legend")
+			.selectAll(".legend-item")
+			.data(legendData);
+
+		const legendEnter = legend
+			.enter()
+			.append("div")
+			.attr("class", "legend-item");
+
+		legendEnter
+			.append("div")
+			.attr("class", "legend-color")
+			.style("background-color", d => d.color);
+
+		legendEnter.append("p").text(d => d.key);
+	}
+}
+
+function createStackedBarchartCultureel() {
+	let data = [
+		{
+			categorie: "benaderd-door-politie",
+			afkomst: "Nederlands",
+			eens: 69,
+			oneens: 16,
+			neutraal: 15,
+			total: 100
+		},
+		{
+			categorie: "benaderd-door-politie",
+			afkomst: "Niet westers",
+			eens: 49,
+			oneens: 32,
+			neutraal: 19,
+			total: 100
+		}
+	];
+
+	var keys = ["eens", "neutraal", "oneens"];
+
+	const margin = {top: 5, right: 10, bottom: 100, left: 15};
+	const width = 500 - margin.left - margin.right;
+	const height = 600 - margin.top - margin.bottom;
+	// append the svg object to the body of the page
+	const svg = d3
+		.select("#ervaring-cultureel")
+		.select(".svg-container")
+		.append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.call(responsivefy)
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	var x = d3
+		.scaleBand()
+		.range([margin.left, width - margin.right])
+		.padding(0.1);
+
+	var y = d3.scaleLinear().rangeRound([height - margin.bottom, margin.top]);
+
+	var xAxis = svg
+		.append("g")
+		.attr("transform", `translate(0,${height - margin.bottom})`)
+		.attr("class", "x-axis");
+
+	var yAxis = svg
+		.append("g")
+		.attr("transform", `translate(${margin.left},0)`)
+		.attr("class", "y-axis");
+
+	var z = d3
+		.scaleOrdinal()
+		.range(["black", "gray", "darkgray"])
+		.domain(keys);
+
+		return update();
+
+	function update(input, speed) {
+
+		y.domain([0, d3.max(data, d => d3.sum(keys, k => +d[k]))]).nice();
+
+		svg.selectAll(".y-axis").call(d3.axisLeft(y).ticks(null, "s"));
+
+		x.domain(data.map(d => d.afkomst));
+
+		svg.selectAll(".x-axis")
+			.call(d3.axisBottom(x).tickSizeOuter(0))
+			.call(g =>
+				g
+					.select(".tick:first-of-type text")
+					.attr("y", 30)
+					.html(
+						'<tspan font-size="14" class="myText" text-align="left"><tspan font-weight="600">Nederlanders</tspan> zonder</tspan><tspan text-align="left" class="myText" font-size="14">migratieachtergrond</tspan>'
+					)
+					.selectAll(".myText")
+					.attr("dy", "1.2em")
+					.attr("x", "0")
+					.select(".myText:last-of-type")
+					.attr("x", 20)
+			)
+			.call(g =>
+				g
+					.selectAll(".tick:first-of-type")
+					.append("rect")
+					.attr("fill", "#fc3e46")
+					.attr("y", "10")
+					.attr("x", "-80")
+					.attr("width", 160)
+					.attr("height", 20)
+					.attr("rx", 3)
+			)
+			.call(g =>
+				g
+					.selectAll(".tick:last-of-type text")
+					.attr("y", 30)
+					.html(
+						'<tspan font-size="14" class="myText"><tspan font-weight="600">Nederlanders</tspan> met</tspan><tspan class="myText" font-size="14">niet-westerse</tspan><tspan font-size="14" class="myText"> migratieachtergrond</tspan>'
+					)
+					.selectAll(".myText")
+					.attr("dy", "1.2em")
+					.attr("x", "0")
+			)
+			.call(g =>
+				g
+					.selectAll(".tick:last-of-type")
+					.append("rect")
+					.attr("fill", "#0048ff")
+					.attr("y", "10")
+					.attr("x", "-80")
+					.attr("width", 160)
+					.attr("height", 20)
+					.attr("rx", 3)
+			);
+
+		var group = svg
+			.selectAll("g.layer")
+			.data(d3.stack().keys(keys)(data), d => d.key);
+
+		group
+			.enter()
+			.append("g")
+			.classed("layer", true)
+			.attr("fill", d => z(d.key));
+
+
+		var bars = svg
+			.selectAll("g.layer")
+			.selectAll("rect")
+			.data(d => d, e => e.data.afkomst);
+
+		const barsEnter = bars
+			.enter()
+			.append("g")
+			.attr("class", "chart");
+
+		barsEnter
+			.append("rect")
+			.attr("width", x.bandwidth())
+			.attr("x", d => x(d.data.afkomst))
+			.attr("y", d => y(d[1]))
+			.attr("height", d => y(d[0]) - y(d[1]));
+
+		const text = svg
+			.selectAll("g.layer")
+			.selectAll("text")
+			.data(d => d, e => e.data.afkomst);
+
+		const textEnter = text
+			.enter()
+			.append("text")
+			.attr("text-anchor", "middle")
+			.attr("font-size", "20px")
+			.attr("font-family", "Roboto")
+			.style("fill", "#fff33d")
+			.attr("x", d => x(d.data.afkomst) + x.bandwidth() / 2)
+			.attr("y", d => y(d[1]) + (y(d[0]) - y(d[1])) / 2 + 10)
+			.text(d => {
+				if (d[0] === 0) {
+					return d[1] + "%";
+				} else {
+					return d[1] - d[0] + "%";
+				}
+			});
+
+		const legendData = [
+			{
+				key: "(Zeer) Onterecht",
+				color: "black"
+			},
+			{
+				key: "Neutraal",
+				color: "grey"
+			},
+			{
+				key: "(Zeer) terecht",
+				color: "darkgrey"
+			}
+		];
+
+		const legend = d3
+			.select("#ervaring-cultureel")
+			.select(".legend")
+			.selectAll(".legend-item")
+			.data(legendData);
+
+		const legendEnter = legend
+			.enter()
+			.append("div")
+			.attr("class", "legend-item");
+
+		legendEnter
+			.append("div")
+			.attr("class", "legend-color")
+			.style("background-color", d => d.color);
+
+		legendEnter.append("p").text(d => d.key);
+	}
+}
+
 const onderwerpBtns = document.querySelectorAll(".onderwerp-button");
-const vertrouwenH1 = document.querySelector("#vertrouwen h1")
-let typedOptions;
-let typed;
 
 function changeTopic() {
+
 	const currentTopic = document.querySelector("#" + this.value)
+
 	d3.selectAll(".topic-container").classed("active", false);
+
 	currentTopic.classList.add("active")
+
 	d3.selectAll("svg").remove();
+
 	if(this.value === "vertrouwen"){
 		createHeatmap();
-		typedOptions = new Typed("#typed-vertrouwen", {
-			strings: ["Het vertrouwen in de politie"],
-			typeSpeed: 60
-		});
 	} else if(this.value === "beleving"){
 		createStackedBarchartBeleefd();
 		createStackedBarchartLuisterdGoed();
 		createStackedBarchartRechtvaardig();
+	} else if(this.value === "ervaring") {
+		createStackedBarchartTerecht();
+		createStackedBarchartCultureel();
 	}
 }
 function addListener() {

@@ -3,20 +3,21 @@
 	.numbers {
 		display: flex;
 		.number-container {
-			text-align: center;
+			text-align: left;
 			flex: 1;
 			&:first-of-type {
 				margin-right: 1em;
 			}
 			.big-number {
+				text-align: center;
 				font-weight: 600;
 				margin: 0;
 				font-family: $title-family;
-				font-size: 3em;
+				font-size: 2em;
 				line-height: normal;
 
 				.bigger-number {
-					font-size: 3em;
+					font-size: 2em;
 				}
 			}
 			.migratieachtergrond-rectangle{
