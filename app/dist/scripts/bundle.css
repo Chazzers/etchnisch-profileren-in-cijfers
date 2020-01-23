@@ -326,12 +326,23 @@ div.tooltip {
 
 .medium-numbers {
   text-align: center; }
+  @media only screen and (min-width: 1248px) {
+    .medium-numbers {
+      display: flex; } }
   .medium-numbers .medium-container {
     margin-bottom: 1em; }
     .medium-numbers .medium-container p {
       margin: 0; }
+    @media only screen and (min-width: 1248px) {
+      .medium-numbers .medium-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
     .medium-numbers .medium-container .number-container {
       display: flex; }
+      @media only screen and (min-width: 1248px) {
+        .medium-numbers .medium-container .number-container {
+          max-width: 230px; } }
       .medium-numbers .medium-container .number-container .medium-number-container {
         flex: 1; }
         .medium-numbers .medium-container .number-container .medium-number-container:first-of-type {
@@ -342,13 +353,20 @@ div.tooltip {
           font-family: "Rubik", sans-serif;
           font-size: 1.5em;
           line-height: normal; }
+          @media only screen and (min-width: 1248px) {
+            .medium-numbers .medium-container .number-container .medium-number-container .medium-number {
+              font-size: 3em; } }
           .medium-numbers .medium-container .number-container .medium-number-container .medium-number .bigger-number {
             font-size: 1.5em; }
         .medium-numbers .medium-container .number-container .medium-number-container .migratieachtergrond-rectangle {
           height: 30px;
           width: 100%;
           border-radius: 8px;
-          margin-bottom: 0.5em; }
+          margin-bottom: 0.5em;
+          margin: auto; }
+          @media only screen and (min-width: 1248px) {
+            .medium-numbers .medium-container .number-container .medium-number-container .migratieachtergrond-rectangle {
+              height: 15px; } }
         .medium-numbers .medium-container .number-container .medium-number-container .red {
           background-color: #fc3e46; }
         .medium-numbers .medium-container .number-container .medium-number-container .blue {
