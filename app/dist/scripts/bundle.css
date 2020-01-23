@@ -214,20 +214,21 @@ html {
   width: 100%;
   height: 100%; }
 
-.legend {
-  display: flex; }
-  .legend .legend-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 0.25em;
-    justify-content: center;
-    align-items: center; }
-    .legend .legend-item .legend-color {
-      width: 100%;
-      height: 16px; }
-    .legend .legend-item p {
-      font-size: 10px; }
+.LegendaFlex {
+  display: flex;
+  flex-direction: row; }
+
+.legend .legend-item {
+  flex: 1;
+  display: flex;
+  padding: 0 0.25em;
+  justify-content: center;
+  align-items: center; }
+  .legend .legend-item .legend-color {
+    width: 100%;
+    height: 16px; }
+  .legend .legend-item p {
+    font-size: 10px; }
 
 .pie-chart-viz-container {
   display: flex;
