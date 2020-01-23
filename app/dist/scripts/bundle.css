@@ -117,6 +117,10 @@ html {
   flex-wrap: wrap;
   padding: 1em 0;
   margin: 0 1em; }
+  @media only screen and (min-width: 1248px) {
+    .onderwerp-buttons-container {
+      max-width: 90%;
+      margin: auto; } }
   .onderwerp-buttons-container .onderwerp-button {
     flex: 45%;
     background-color: #fff33d;
@@ -130,7 +134,7 @@ html {
     @media only screen and (min-width: 1248px) {
       .onderwerp-buttons-container .onderwerp-button {
         flex: 1;
-        margin-right: 1em; } }
+        margin-right: 1.2em; } }
     .onderwerp-buttons-container .onderwerp-button:nth-of-type(even) {
       margin-left: 1em; }
       @media only screen and (min-width: 1248px) {
@@ -323,7 +327,7 @@ header {
         .cijfer-text-container .numbers .number-container {
           max-width: 230px; } }
       .cijfer-text-container .numbers .number-container:first-of-type {
-        margin-right: 1em; }
+        margin-right: 5em; }
       .cijfer-text-container .numbers .number-container .big-number {
         text-align: center;
         font-weight: 600;
@@ -350,12 +354,23 @@ header {
 
 .medium-numbers {
   text-align: center; }
+  @media only screen and (min-width: 1248px) {
+    .medium-numbers {
+      display: flex; } }
   .medium-numbers .medium-container {
     margin-bottom: 1em; }
     .medium-numbers .medium-container p {
       margin: 0; }
+    @media only screen and (min-width: 1248px) {
+      .medium-numbers .medium-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
     .medium-numbers .medium-container .number-container {
       display: flex; }
+      @media only screen and (min-width: 1248px) {
+        .medium-numbers .medium-container .number-container {
+          max-width: 230px; } }
       .medium-numbers .medium-container .number-container .medium-number-container {
         flex: 1; }
         .medium-numbers .medium-container .number-container .medium-number-container:first-of-type {
@@ -366,13 +381,20 @@ header {
           font-family: "Rubik", sans-serif;
           font-size: 1.5em;
           line-height: normal; }
+          @media only screen and (min-width: 1248px) {
+            .medium-numbers .medium-container .number-container .medium-number-container .medium-number {
+              font-size: 3em; } }
           .medium-numbers .medium-container .number-container .medium-number-container .medium-number .bigger-number {
             font-size: 1.5em; }
         .medium-numbers .medium-container .number-container .medium-number-container .migratieachtergrond-rectangle {
           height: 30px;
           width: 100%;
           border-radius: 8px;
-          margin-bottom: 0.5em; }
+          margin-bottom: 0.5em;
+          margin: auto; }
+          @media only screen and (min-width: 1248px) {
+            .medium-numbers .medium-container .number-container .medium-number-container .migratieachtergrond-rectangle {
+              height: 15px; } }
         .medium-numbers .medium-container .number-container .medium-number-container .red {
           background-color: #fc3e46; }
         .medium-numbers .medium-container .number-container .medium-number-container .blue {
