@@ -1,26 +1,3 @@
-header {
-  background-color: #000;
-  padding: 1em; }
-  header .flex-parent {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column; }
-    header .flex-parent .flex-child {
-      flex: 1; }
-      header .flex-parent .flex-child:first-of-type {
-        padding-bottom: 1em; }
-      header .flex-parent .flex-child .logo {
-        background: left/contain no-repeat url("../images/logo.svg");
-        width: 100%;
-        height: 5em; }
-    header .flex-parent .titles h1 {
-      color: #fff33d;
-      font-size: 1.5em;
-      text-transform: uppercase; }
-    header .flex-parent .titles h2 {
-      color: #fff;
-      font-size: 1.25em; }
-
 .container {
   margin: 0 1em; }
   @media only screen and (min-width: 768px) {
@@ -116,20 +93,6 @@ h3 {
   .counter-container .counter {
     font-size: 1.5em; } }
 
-@media only screen and (min-width: 768px) {
-  p {
-    font-size: 24px; }
-  h1 {
-    font-size: 3em; }
-  h2 {
-    font-size: 2.5em; }
-  h3 {
-    font-size: 2em; }
-  .counter-container p {
-    font-size: 1em; }
-  .counter-container .counter {
-    font-size: 1.5em; } }
-
 body,
 html {
   margin: 0;
@@ -214,9 +177,10 @@ html {
   width: 100%;
   height: 100%; }
 
-.LegendaFlex {
-  display: flex;
-  flex-direction: row; }
+@media only screen and (min-width: 1248px) {
+  .LegendaFlex {
+    display: flex;
+    flex-direction: row; } }
 
 .legend .legend-item {
   flex: 1;
@@ -254,6 +218,12 @@ html {
 .barchart-viz-container .barchart-container {
   margin-bottom: 1em; }
   .barchart-viz-container .barchart-container .barchart img {
+    width: 100%;
+    height: 100%; }
+
+.barchart-container {
+  margin-bottom: 1em; }
+  .barchart-container .barchart img {
     width: 100%;
     height: 100%; }
 
@@ -325,6 +295,29 @@ div.tooltip {
   .options label {
     padding-bottom: 1em; }
 
+header {
+  background-color: #000;
+  padding: 1em; }
+  header .flex-parent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+    header .flex-parent .flex-child {
+      flex: 1; }
+      header .flex-parent .flex-child:first-of-type {
+        padding-bottom: 1em; }
+      header .flex-parent .flex-child .logo {
+        background: left/contain no-repeat url("../images/logo.svg");
+        width: 100%;
+        height: 5em; }
+    header .flex-parent .titles h1 {
+      color: #fff33d;
+      font-size: 1.5em;
+      text-transform: uppercase; }
+    header .flex-parent .titles h2 {
+      color: #fff;
+      font-size: 1.25em; }
+
 .bold {
   font-weight: 500; }
 
@@ -348,7 +341,10 @@ div.tooltip {
         .cijfer-text-container .numbers .number-container {
           max-width: 230px; } }
       .cijfer-text-container .numbers .number-container:first-of-type {
-        margin-right: 5em; }
+        margin-right: 1em; }
+        @media only screen and (min-width: 768px) {
+          .cijfer-text-container .numbers .number-container:first-of-type {
+            margin-right: 5em; } }
       .cijfer-text-container .numbers .number-container .big-number {
         text-align: center;
         font-weight: 600;
