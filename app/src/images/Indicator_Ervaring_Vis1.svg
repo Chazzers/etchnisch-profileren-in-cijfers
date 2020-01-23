@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="699" height="784" viewBox="0 0 699 784">
+  <g fill="none" fill-rule="evenodd" transform="translate(-2 -8)">
+    <rect width="284.193" height="145.861" x="106.05" y="375.417" fill="#6F6F6E"/>
+    <rect width="284.193" height="50.49" x="106.05" y="520.706" fill="#A2A1A1"/>
+    <rect width="284.193" height="364.653" x="106.05" y="10.605" fill="#1D1D1B"/>
+    <rect width="284.193" height="196.352" x="414.656" y="10.605" fill="#1D1D1B"/>
+    <rect width="284.193" height="157.081" x="414.656" y="206.798" fill="#6F6F6E"/>
+    <rect width="284.193" height="207.572" x="414.656" y="363.752" fill="#A2A1A1"/>
+    <polygon fill="#1D1D1B" points="699.357 598.08 80.354 598.08 80.354 13.787 74.235 13.787 74.235 10.605 83.536 10.605 83.536 594.898 699.357 594.898"/>
+    <text fill="#1D1D1B" font-family="Roboto-Medium, Roboto" font-size="25.452" font-weight="400">
+      <tspan x="22.27" y="579.52">0%</tspan>
+    </text>
+    <text fill="#1D1D1B" font-family="Roboto-Medium, Roboto" font-size="25.452" font-weight="400">
+      <tspan x="11.665" y="469.228">20%</tspan>
+    </text>
+    <text fill="#1D1D1B" font-family="Roboto-Medium, Roboto" font-size="25.452" font-weight="400">
+      <tspan x="11.665" y="358.937">40%</tspan>
+    </text>
+    <text fill="#FFF33D" font-family="Rubik-Medium, Rubik" font-size="31.815" font-weight="400">
+      <tspan x="222.705" y="556.008">9%</tspan>
+    </text>
+    <text fill="#FFF33D" font-family="Rubik-Medium, Rubik" font-size="31.815" font-weight="400">
+      <tspan x="215.281" y="457.382">26%</tspan>
+    </text>
+    <text fill="#FFF33D" font-family="Rubik-Medium, Rubik" font-size="31.815" font-weight="400">
+      <tspan x="215.281" y="201.801">65%</tspan>
+    </text>
+    <text fill="#FFF33D" font-family="Rubik-Medium, Rubik" font-size="31.815" font-weight="400">
+      <tspan x="523.887" y="477.531">37%</tspan>
+    </text>
+    <text fill="#FFF33D" font-family="Rubik-Medium, Rubik" font-size="31.815" font-weight="400">
+      <tspan x="523.887" y="295.125">28%</tspan>
+    </text>
+    <text fill="#FFF33D" font-family="Rubik-Medium, Rubik" font-size="31.815" font-weight="400">
+      <tspan x="523.887" y="118.022">35%</tspan>
+    </text>
+    <text fill="#1D1D1B" font-family="Roboto-Medium, Roboto" font-size="25.452" font-weight="400">
+      <tspan x="11.665" y="247.584">60%</tspan>
+    </text>
+    <text fill="#1D1D1B" font-family="Roboto-Medium, Roboto" font-size="25.452" font-weight="400">
+      <tspan x="11.665" y="137.292">80%</tspan>
+    </text>
+    <text fill="#1D1D1B" font-family="Roboto-Medium, Roboto" font-size="25.452" font-weight="400">
+      <tspan x="0" y="27">100%</tspan>
+    </text>
+    <path stroke="#1D1D1B" stroke-width="3.182" d="M74.235 572.13975L81.944835 572.13975M74.235 459.72675L81.944835 459.72675M74.235 347.31375L81.944835 347.31375M74.235 235.96125L81.944835 235.96125M74.235 123.54825L81.944835 123.54825"/>
+    <g transform="translate(419 604)">
+      <rect width="28" height="284" x="128" y="-84" fill="#0048FF" rx="9.468" transform="rotate(90 142 58)"/>
+      <g font-size="28" transform="translate(0 77)">
+        <text fill="#1D1D1B" font-family="Roboto-Medium, Roboto" font-weight="400">
+          <tspan x="0" y="68">een niet-westerse </tspan> <tspan x="0" y="105">migratieachtergrond</tspan>
+        </text>
+        <text fill="#000" font-family="Roboto-Medium, Roboto" font-weight="400">
+          <tspan x="197" y="29">met</tspan>
+        </text>
+        <text fill="#1D1D1B" font-family="Rubik-Bold, Rubik" font-weight="bold">
+          <tspan x="0" y="30">Nederlanders</tspan>
+        </text>
+      </g>
+      <text fill="#000" font-family="Roboto-Light, Roboto" font-size="30" font-weight="300">
+        <tspan x="22.549" y="31">279 respondenten</tspan>
+      </text>
+    </g>
+    <g transform="translate(103 604)">
+      <rect width="27.761" height="284" x="129" y="-84" fill="#FA3F47" rx="9.468" transform="rotate(90 142.88 58)"/>
+      <g font-size="28" transform="translate(1 76)">
+        <text fill="#000" font-family="Roboto-Medium, Roboto" font-weight="400">
+          <tspan x="197" y="29">zonder</tspan>
+        </text>
+        <text fill="#000" font-family="Roboto-Medium, Roboto" font-weight="400">
+          <tspan x="1" y="66">migratieachtergrond</tspan>
+        </text>
+        <text fill="#1D1D1B" font-family="Rubik-Bold, Rubik" font-weight="bold">
+          <tspan x="0" y="30">Nederlanders</tspan>
+        </text>
+      </g>
+      <text fill="#000" font-family="Roboto-Light, Roboto" font-size="30" font-weight="300">
+        <tspan x="17.617" y="31">120 respondenten</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
