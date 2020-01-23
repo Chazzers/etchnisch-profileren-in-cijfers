@@ -1,7 +1,5 @@
 .cijfer-text-container {
 	margin-top: 1em;
-
-
 	.numbers {
 		display: flex;
 		@include mq("desktop") {
@@ -16,8 +14,10 @@
 
 			}
 			&:first-of-type {
-				margin-right: 5em;
-
+				margin-right: 1em;
+				@include mq("tablet"){
+					margin-right: 5em;
+				}
 			}
 			.big-number {
 				text-align: center;
@@ -26,8 +26,6 @@
 				font-family: $title-family;
 				font-size: 2em;
 				line-height: normal;
-
-
 
 				.bigger-number {
 					font-size: 3em;
@@ -71,16 +69,16 @@
 		}
 		@include mq("desktop"){
 			display: flex;
-    	flex-direction: column;
-    	align-items: center;
+			flex-direction: column;
+			align-items: center;
 		}
 
 		.number-container {
 			display: flex;
 
 			@include mq("desktop") {
-						max-width: 230px;
-					}
+				max-width: 230px;
+			}
 
 
 			.medium-number-container{
