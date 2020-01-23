@@ -1,10 +1,20 @@
 .container {
 	margin: 0 1em;
 
-	max-width: 1080px;
-	@include mq("desktop") {
+	@include mq("tablet") {
 		margin: auto;
+		max-width: 680px;
 	}
+
+	@include mq("desktop") {
+
+	}
+	@include mq("desktop-wide") {
+		max-width: 860px;
+	}
+}
+.view-height {
+	position: relative;
 }
 
 .topic-container {
@@ -23,9 +33,6 @@
 
 .counter-container {
 	margin-bottom: 1em;
-	// height: 30px;
-	// width: 250px;
-
 }
 
 .video-container {

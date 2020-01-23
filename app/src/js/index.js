@@ -1733,53 +1733,6 @@ let counterVertrouwen3 = new CountUp("counter-vertrouwen-3");
 let counterVertrouwen4 = new CountUp("counter-vertrouwen-4");
 let counterVertrouwen5 = new CountUp("counter-vertrouwen-5");
 
-const counterArray = [
-	counterAanleiding1,
-	counterAanleiding2,
-	counterAanleiding3,
-	counterAanleiding4,
-	counterControle1,
-	counterControle2,
-	counterErvaring1,
-	counterErvaring2,
-	counterBeleving1,
-	counterBeleving2,
-	counterBeleving3,
-	counterVertrouwen1,
-	counterVertrouwen2,
-	counterVertrouwen3,
-	counterVertrouwen4,
-	counterVertrouwen5
-];
-
-const counterAanleidingArray = [
-	counterAanleiding1,
-	counterAanleiding2,
-	counterAanleiding3,
-	counterAanleiding4
-];
-const counterControleArray = [
-	counterControle1,
-	counterControle2
-];
-const counterErvaringArray = [
-	counterErvaring1,
-	counterErvaring2,
-];
-const counterBelevingArray = [
-	counterBeleving1,
-	counterBeleving2,
-	counterBeleving3
-];
-
-const counterVertrouwenArray = [
-	counterVertrouwen1,
-	counterVertrouwen2,
-	counterVertrouwen3,
-	counterVertrouwen4,
-	counterVertrouwen5
-];
-
 function executeCounterAanleiding(amount) {
 	counterAanleiding1.update(amount);
 	counterAanleiding2.update(amount);
@@ -1813,30 +1766,6 @@ function executeCounterVertrouwen(amount) {
 	counterVertrouwen4.update(amount);
 	counterVertrouwen5.update(amount);
 }
-
-// inView("#counter-aanleiding-1").on("enter", counterArray.forEach(d => d.update(632)));
-// inView("#counter-aanleiding-2").on("enter", counterArray.forEach(d => d.update(368)));
-// inView("#counter-aanleiding-3").on("enter", counterArray.forEach(d => d.update(632)));
-// inView("#counter-aanleiding-4").on("enter", counterArray.forEach(d => d.update(220)));
-//
-// inView("#counter-controle-1").on("enter", counterArray.forEach(d => d.update(376)));
-// inView("#counter-controle-2").on("enter", counterArray.forEach(d => d.update(376)));
-//
-// inView("#counter-beleving-1").on("enter", counterArray.forEach(d => d.update(625)));
-// inView("#counter-beleving-2").on("enter", counterArray.forEach(d => d.update(621)));
-// inView("#counter-beleving-3").on("enter", counterArray.forEach(d => d.update(616)));
-// inView("#counter-beleving-4").on("enter", counterArray.forEach(d => d.update(408)));
-// inView("#counter-beleving-5").on("enter", counterArray.forEach(d => d.update(408)));
-// inView("#counter-beleving-6").on("enter", counterArray.forEach(d => d.update(408)));
-//
-// inView("#counter-ervaring-1").on("enter", counterArray.forEach(d => d.update(399)));
-// inView("#counter-ervaring-2").on("enter", counterArray.forEach(d => d.update(408)));
-//
-// inView("#counter-vertrouwen-1").on("enter", counterArray.forEach(d => d.update(1643)));
-// inView("#counter-vertrouwen-2").on("enter", counterArray.forEach(d => d.update(1643)));
-// inView("#counter-vertrouwen-3").on("enter", counterArray.forEach(d => d.update(1643)));
-// inView("#counter-vertrouwen-4").on("enter", counterArray.forEach(d => d.update(1654)));
-// inView("#counter-vertrouwen-5").on("enter", counterArray.forEach(d => d.update(1643)));
 
 const counterAanleiding1el = document.querySelector("#counter-aanleiding-1");
 const counterAanleiding2el = document.querySelector("#counter-aanleiding-2");
@@ -1872,6 +1801,10 @@ function changeTopic() {
 	d3.selectAll("svg").remove();
 
 	if(this.value === "aanleiding") {
+		inView.offset({
+			top: 50,
+			bottom: 50
+		})
 		inView(".counter").on("enter", () =>{
 			if(inView.is(counterAanleiding1el) || inView.is(counterAanleiding3el)) {
 				executeCounterAanleiding(632);
@@ -1882,6 +1815,10 @@ function changeTopic() {
 			}
 		})
 	} else if(this.value === "controle") {
+		inView.offset({
+			top: 50,
+			bottom: 50
+		})
 		inView(".counter").on("enter", () =>{
 			if(inView.is(counterControle1el) || inView.is(counterControle2el)) {
 				executeCounterControle(376);
@@ -1892,6 +1829,10 @@ function changeTopic() {
 		createStackedBarchartLuisterdGoed();
 		createStackedBarchartRechtvaardig();
 
+		inView.offset({
+			top: 50,
+			bottom: 50
+		})
 		inView(".counter").on("enter", () =>{
 			if(inView.is(counterBeleving1el)) {
 				executeCounterBeleving(625);
@@ -1906,6 +1847,10 @@ function changeTopic() {
 	} else if(this.value === "ervaring") {
 		createStackedBarchartTerecht();
 		createStackedBarchartCultureel();
+		inView.offset({
+			top: 50,
+			bottom: 50
+		})
 		inView(".counter").on("enter", () =>{
 			if(inView.is(counterErvaring1el)) {
 				executeCounterErvaring(399);
@@ -1915,6 +1860,10 @@ function changeTopic() {
 		})
 	} else if(this.value === "vertrouwen") {
 		createHeatmap();
+		inView.offset({
+			top: 50,
+			bottom: 50
+		})
 		inView(".counter").on("enter", () => {
 			if(inView.is(counterVertrouwen1el) || inView.is(counterVertrouwen2el) || inView.is(counterVertrouwen3el) || inView.is(counterVertrouwen5el)) {
 				executeCounterVertrouwen(1643)

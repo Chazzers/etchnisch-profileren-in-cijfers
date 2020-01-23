@@ -21,9 +21,19 @@
 	padding: 1em;
 	text-align: center;
 
+	@include mq("desktop") {
+		max-width: 200px;
+		position: absolute;
+		left: -35%;
+		top: 0;
+	}
 	.counter {
+		margin-bottom: 0;
 		font-weight: bold;
 		font-size: 1.5em;
+	}
+	p {
+		margin-bottom: 0;
 	}
 }
 
@@ -31,7 +41,6 @@
 	width: 100%;
 	max-width: 500px;
 	height: 100%;
-	// max-height: 500px;
 }
 .svg-content-responsive {
 	width: 100%;
