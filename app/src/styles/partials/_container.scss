@@ -6,9 +6,6 @@
 		max-width: 680px;
 	}
 
-	@include mq("desktop") {
-
-	}
 	@include mq("desktop-wide") {
 		max-width: 860px;
 	}
@@ -33,6 +30,7 @@
 
 .counter-container {
 	margin-bottom: 1em;
+
 }
 
 .video-container {

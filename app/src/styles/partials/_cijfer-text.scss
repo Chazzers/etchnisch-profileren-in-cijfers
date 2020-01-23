@@ -4,9 +4,17 @@
 
 	.numbers {
 		display: flex;
+		@include mq("desktop") {
+			justify-content: center;
+		}
 		.number-container {
 			text-align: left;
 			flex: 1;
+
+			@include mq("desktop") {
+				max-width: 230px;
+
+			}
 			&:first-of-type {
 				margin-right: 1em;
 
@@ -27,11 +35,10 @@
 			}
 			.migratieachtergrond-rectangle{
 				height: 20px;
-				width: 230px;
+				width: 100%;
 				border-radius: 6px;
 				margin-bottom: 1em;
 				margin: auto;
-
 			}
 			.red {
 				background-color: $color-red;
