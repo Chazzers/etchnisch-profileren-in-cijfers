@@ -1,15 +1,15 @@
 .inleiding {
 	h1 { @include mq("desktop") {
- 		margin-top: 2em;
+			margin-top: 2em;
 
- 	}
- 	}
+		}
+	}
 
- p { @include mq("desktop") {
- 	margin-top: 2em;
- 	margin-bottom: 1em;
- }
- }
+	p { @include mq("desktop") {
+			margin-top: 2em;
+			margin-bottom: 1em;
+		}
+	}
 }
 
 .container {

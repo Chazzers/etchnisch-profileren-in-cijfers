@@ -14,6 +14,56 @@ import {CountUp} from "countup.js";
 import inView from "in-view";
 import * as d3 from "d3";
 
+const countUpOptions = {
+	useEasing: true,
+	useGrouping: false
+};
+
+// Counters
+let counterAanleiding1 = new CountUp("counter-aanleiding-1", 0, countUpOptions);
+let counterAanleiding2 = new CountUp("counter-aanleiding-2", 0, countUpOptions);
+let counterAanleiding3 = new CountUp("counter-aanleiding-3", 0, countUpOptions);
+let counterAanleiding4 = new CountUp("counter-aanleiding-4", 0, countUpOptions);
+
+let counterControle1 = new CountUp("counter-controle-1", 0, countUpOptions);
+let counterControle2 = new CountUp("counter-controle-2", 0, countUpOptions);
+
+let counterErvaring1 = new CountUp("counter-ervaring-1", 0, countUpOptions);
+let counterErvaring2 = new CountUp("counter-ervaring-2", 0, countUpOptions);
+
+let counterBeleving1 = new CountUp("counter-beleving-1", 0, countUpOptions);
+let counterBeleving2 = new CountUp("counter-beleving-2", 0, countUpOptions);
+let counterBeleving3 = new CountUp("counter-beleving-3", 0, countUpOptions);
+let counterBeleving4 = new CountUp("counter-beleving-4", 0, countUpOptions);
+let counterBeleving5 = new CountUp("counter-beleving-5", 0, countUpOptions);
+let counterBeleving6 = new CountUp("counter-beleving-6", 0, countUpOptions);
+
+let counterVertrouwen1 = new CountUp("counter-vertrouwen-1", 0, countUpOptions);
+let counterVertrouwen2 = new CountUp("counter-vertrouwen-2", 0, countUpOptions);
+let counterVertrouwen3 = new CountUp("counter-vertrouwen-3", 0, countUpOptions);
+let counterVertrouwen4 = new CountUp("counter-vertrouwen-4", 0, countUpOptions);
+let counterVertrouwen5 = new CountUp("counter-vertrouwen-5", 0, countUpOptions);
+
+const counterAanleiding1el = document.querySelector("#counter-aanleiding-1");
+const counterAanleiding2el = document.querySelector("#counter-aanleiding-2");
+const counterAanleiding3el = document.querySelector("#counter-aanleiding-3");
+const counterAanleiding4el = document.querySelector("#counter-aanleiding-4");
+const counterControle1el = document.querySelector("#counter-controle-1");
+const counterControle2el = document.querySelector("#counter-controle-2");
+const counterBeleving1el = document.querySelector("#counter-beleving-1");
+const counterBeleving2el = document.querySelector("#counter-beleving-2");
+const counterBeleving3el = document.querySelector("#counter-beleving-3");
+const counterBeleving4el = document.querySelector("#counter-beleving-4");
+const counterBeleving5el = document.querySelector("#counter-beleving-5");
+const counterBeleving6el = document.querySelector("#counter-beleving-6");
+const counterErvaring1el = document.querySelector("#counter-ervaring-1");
+const counterErvaring2el = document.querySelector("#counter-ervaring-2");
+const counterVertrouwen1el = document.querySelector("#counter-vertrouwen-1");
+const counterVertrouwen2el = document.querySelector("#counter-vertrouwen-2");
+const counterVertrouwen3el = document.querySelector("#counter-vertrouwen-3");
+const counterVertrouwen4el = document.querySelector("#counter-vertrouwen-4");
+const counterVertrouwen5el = document.querySelector("#counter-vertrouwen-5");
+
 function responsivefy(svg) {
 	// container will be the DOM element
 	// that the svg is appended to
@@ -524,6 +574,17 @@ function createStackedBarchartBeleefd() {
 				checked = d;
 			}
 		});
+
+		if(checked.id === "benaderd-door-politie") {
+			counterBeleving4.update(408)
+			counterBeleving5.update(408)
+			counterBeleving6.update(408)
+		} else if (checked.id === "zelf-politie-benaderd") {
+			counterBeleving4.update(217)
+			counterBeleving5.update(217)
+			counterBeleving6.update(217)
+		}
+
 		return update(d3.select(checked).property("value"), 0);
 	}
 	clickRadio();
@@ -820,6 +881,13 @@ function createStackedBarchartLuisterdGoed() {
 				checked = d;
 			}
 		});
+
+		if(checked.id === "benaderd-door-politie-1") {
+			counterBeleving5.update(400)
+		} else if (checked.id === "zelf-politie-benaderd-1") {
+			counterBeleving5.update(221)
+		}
+
 		return update(d3.select(checked).property("value"), 0);
 	}
 	clickRadio();
@@ -1116,6 +1184,13 @@ function createStackedBarchartRechtvaardig() {
 				checked = d;
 			}
 		});
+
+		if(checked.id === "benaderd-door-politie-2") {
+			counterBeleving6.update(401)
+		} else if (checked.id === "zelf-politie-benaderd-2") {
+			counterBeleving6.update(215)
+		}
+
 		return update(d3.select(checked).property("value"), 0);
 	}
 	clickRadio();
@@ -1297,36 +1372,6 @@ function createStackedBarchartRechtvaardig() {
 
 const onderwerpBtns = document.querySelectorAll(".onderwerp-button");
 
-const countUpOptions = {
-	useEasing: true,
-	useGrouping: false
-};
-
-// Counters
-let counterAanleiding1 = new CountUp("counter-aanleiding-1", 0, countUpOptions);
-let counterAanleiding2 = new CountUp("counter-aanleiding-2", 0, countUpOptions);
-let counterAanleiding3 = new CountUp("counter-aanleiding-3", 0, countUpOptions);
-let counterAanleiding4 = new CountUp("counter-aanleiding-4", 0, countUpOptions);
-
-let counterControle1 = new CountUp("counter-controle-1", 0, countUpOptions);
-let counterControle2 = new CountUp("counter-controle-2", 0, countUpOptions);
-
-let counterErvaring1 = new CountUp("counter-ervaring-1", 0, countUpOptions);
-let counterErvaring2 = new CountUp("counter-ervaring-2", 0, countUpOptions);
-
-let counterBeleving1 = new CountUp("counter-beleving-1", 0, countUpOptions);
-let counterBeleving2 = new CountUp("counter-beleving-2", 0, countUpOptions);
-let counterBeleving3 = new CountUp("counter-beleving-3", 0, countUpOptions);
-let counterBeleving4 = new CountUp("counter-beleving-4", 0, countUpOptions);
-let counterBeleving5 = new CountUp("counter-beleving-5", 0, countUpOptions);
-let counterBeleving6 = new CountUp("counter-beleving-6", 0, countUpOptions);
-
-let counterVertrouwen1 = new CountUp("counter-vertrouwen-1", 0, countUpOptions);
-let counterVertrouwen2 = new CountUp("counter-vertrouwen-2", 0, countUpOptions);
-let counterVertrouwen3 = new CountUp("counter-vertrouwen-3", 0, countUpOptions);
-let counterVertrouwen4 = new CountUp("counter-vertrouwen-4", 0, countUpOptions);
-let counterVertrouwen5 = new CountUp("counter-vertrouwen-5", 0, countUpOptions);
-
 function executeCounterAanleiding(amount) {
 	counterAanleiding1.update(amount);
 	counterAanleiding2.update(amount);
@@ -1360,27 +1405,6 @@ function executeCounterVertrouwen(amount) {
 	counterVertrouwen4.update(amount);
 	counterVertrouwen5.update(amount);
 }
-
-const counterAanleiding1el = document.querySelector("#counter-aanleiding-1");
-const counterAanleiding2el = document.querySelector("#counter-aanleiding-2");
-const counterAanleiding3el = document.querySelector("#counter-aanleiding-3");
-const counterAanleiding4el = document.querySelector("#counter-aanleiding-4");
-const counterControle1el = document.querySelector("#counter-controle-1");
-const counterControle2el = document.querySelector("#counter-controle-2");
-const counterBeleving1el = document.querySelector("#counter-beleving-1");
-const counterBeleving2el = document.querySelector("#counter-beleving-2");
-const counterBeleving3el = document.querySelector("#counter-beleving-3");
-const counterBeleving4el = document.querySelector("#counter-beleving-4");
-const counterBeleving5el = document.querySelector("#counter-beleving-5");
-const counterBeleving6el = document.querySelector("#counter-beleving-6");
-const counterErvaring1el = document.querySelector("#counter-ervaring-1");
-const counterErvaring2el = document.querySelector("#counter-ervaring-2");
-const counterVertrouwen1el = document.querySelector("#counter-vertrouwen-1");
-const counterVertrouwen2el = document.querySelector("#counter-vertrouwen-2");
-const counterVertrouwen3el = document.querySelector("#counter-vertrouwen-3");
-const counterVertrouwen4el = document.querySelector("#counter-vertrouwen-4");
-const counterVertrouwen5el = document.querySelector("#counter-vertrouwen-5");
-
 
 function changeTopic() {
 
@@ -1434,8 +1458,12 @@ function changeTopic() {
 				executeCounterBeleving(621);
 			} else if(inView.is(counterBeleving3el)) {
 				executeCounterBeleving(616);
-			} else if(inView.is(counterBeleving4el) || inView.is(counterBeleving5el) || inView.is(counterBeleving6el)) {
+			} else if(inView.is(counterBeleving4el)) {
 				executeCounterBeleving(408);
+			} else if(inView.is(counterBeleving5el)) {
+				executeCounterBeleving(400);
+			} else if(inView.is(counterBeleving6el)) {
+				executeCounterBeleving(401);
 			}
 		})
 	} else if(this.value === "ervaring") {

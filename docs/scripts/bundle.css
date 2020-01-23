@@ -197,6 +197,10 @@ html {
     display: flex;
     flex-direction: row; } }
 
+@media only screen and (min-width: 1248px) {
+  #vertrouwen-heatmap .legend {
+    flex-direction: column-reverse; } }
+
 .legend {
   display: flex;
   max-width: 500px; }
@@ -264,6 +268,18 @@ html {
   .barchart-container .barchart img {
     width: 100%;
     height: 100%; }
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (min-width: 1248px) {
+    .arrow-container {
+      margin-top: 5em; } }
+  .arrow-container img {
+    width: 20%;
+    height: 20%;
+    margin: auto; }
 
 div.tooltip {
   position: absolute;

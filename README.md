@@ -1,6 +1,8 @@
 # project-information-design
 
-## Concept -
+## Concept - Racial profiling in numbers
+
+"Racial profiling in numbers" visualizes the data of surveys that have been taken by the citizens of Amsterdam. With the survey's numerous calculations have been made in microsoft Excel which have been manually transformed into objects. These objects are then intrepreted by D3.js to make data-visualisations.
 
 ## Getting started
 
@@ -23,3 +25,7 @@ To build for production use:
 `npm run build`
 
 ## Acknowledgments
+
+- http://bl.ocks.org/cbjuan/43f10523858abf6053ae For creating the stacked barchart
+- https://www.d3-graph-gallery.com/graph/heatmap_basic.html For creating the heatmap
+- https://inorganik.github.io/countUp.js/ For creating and updating the counter of respondents
