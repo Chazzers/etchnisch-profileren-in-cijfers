@@ -6,7 +6,6 @@ import { terser } from 'rollup-plugin-terser';
 import serve from 'rollup-plugin-serve';
 import copy from 'rollup-plugin-copy';
 import scss from 'rollup-plugin-scss';
-import browsersync from 'rollup-plugin-browsersync'
 
 export default {
 	input: 'src/js/index.js',

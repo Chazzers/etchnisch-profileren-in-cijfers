@@ -10,7 +10,6 @@ import "../styles/partials/_custom-radio.scss";
 import "../styles/partials/_single-purpose-classes.scss";
 import "../styles/partials/_cijfer-text.scss";
 
-import Typed from "typed.js";
 import {CountUp} from "countup.js";
 import inView from "in-view";
 import * as d3 from "d3";
