@@ -67,10 +67,16 @@
 	.pie-chart-container {
 		flex: 1;
 		height: 300px;
+
+		@include mq("tablet") {
+			flex: 0;
+			height: auto;
+		}
 		.pie-chart {
-			background: center / contain no-repeat url("../images/Indicator_Beleving_Vis1.svg");
-			width: 100%;
-			height: 100%;
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 	.pie-chart-legend {
@@ -78,10 +84,13 @@
 	}
 }
 .barchart-viz-container {
-
 	.barchart-container {
+		margin-bottom: 1em;
 		.barchart {
-
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 }
