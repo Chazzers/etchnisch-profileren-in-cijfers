@@ -50,6 +50,13 @@
 
 .video-container {
 	height: 80%;
+
+	@include mq("desktop"){
+		width: 800px;
+		height: 500px;
+		margin: auto;
+		margin-bottom: 2em;
+	}
 	video {
 		width: 100%;
 		height: 100%;
