@@ -35,7 +35,8 @@ header {
   position: relative; }
 
 .topic-container {
-  display: none; }
+  display: none;
+  margin-top: 5em; }
   .topic-container .typed-string {
     display: none; }
   .topic-container h1 {
