@@ -227,6 +227,9 @@ html {
 .pie-chart-viz-container {
   display: flex;
   flex-direction: column; }
+  @media only screen and (min-width: 1248px) {
+    .pie-chart-viz-container {
+      margin-top: 5em; } }
   .pie-chart-viz-container .pie-chart-container {
     flex: 1;
     height: 300px; }
@@ -237,6 +240,10 @@ html {
     .pie-chart-viz-container .pie-chart-container .pie-chart img {
       width: 100%;
       height: 100%; }
+
+@media only screen and (min-width: 1248px) {
+  .barchart-viz-container {
+    margin-top: 5em; } }
 
 .barchart-viz-container .barchart-container {
   margin-bottom: 1em; }
@@ -349,6 +356,9 @@ header {
 
 .cijfer-text-container {
   margin-top: 1em; }
+  @media only screen and (min-width: 1248px) {
+    .cijfer-text-container {
+      margin-top: 5em; } }
   .cijfer-text-container .numbers {
     display: flex; }
     @media only screen and (min-width: 1248px) {
