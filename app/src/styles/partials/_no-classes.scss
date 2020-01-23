@@ -7,7 +7,6 @@ h2 {
 	font-family: $title-family;
 }
 
-
 h3,
 h4,
 h5,
@@ -54,6 +53,54 @@ h3 {
 	font-size: 1.25em;
 }
 
+@include mq("phone-wide") {
+	p {
+		font-size: 20px;
+	}
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+	h2 {
+		font-size: 1.75em;
+	}
+
+	h3 {
+		font-size: 1.375em;
+	}
+	.counter-container {
+		p {
+			font-size: 1em;
+		}
+		.counter {
+			font-size: 1.5em;
+		}
+	}
+}
+
+@include mq("tablet") {
+	p {
+		font-size: 24px;
+	}
+	h1 {
+		font-size: 3em;
+	}
+	h2 {
+		font-size: 2.5em;
+	}
+	h3 {
+		font-size: 2em;
+	}
+	.counter-container {
+		p {
+			font-size: 1em;
+		}
+		.counter {
+			font-size: 1.5em;
+		}
+	}
+}
 
 body,
 html {
