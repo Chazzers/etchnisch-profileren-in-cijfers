@@ -214,17 +214,47 @@ html {
     display: flex;
     flex-direction: row; } }
 
-.legend .legend-item {
-  flex: 1;
+.legend {
   display: flex;
-  padding: 0 0.25em;
-  justify-content: center;
-  align-items: center; }
-  .legend .legend-item .legend-color {
-    width: 100%;
-    height: 16px; }
-  .legend .legend-item p {
-    font-size: 10px; }
+  max-width: 500px; }
+  @media only screen and (min-width: 1248px) {
+    .legend {
+      flex-direction: column;
+      justify-content: flex-start; } }
+  .legend .legend-item {
+    flex: 1;
+    display: flex;
+    padding: 0 0.25em;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    @media only screen and (min-width: 1248px) {
+      .legend .legend-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 0.5em; } }
+    .legend .legend-item .legend-color {
+      width: 100%;
+      height: 16px; }
+      @media only screen and (min-width: 1248px) {
+        .legend .legend-item .legend-color {
+          width: 42px;
+          height: 24px;
+          margin-right: 0.25em; } }
+    .legend .legend-item p {
+      font-size: 10px; }
+      @media only screen and (min-width: 1248px) {
+        .legend .legend-item p {
+          font-size: 16px;
+          margin-bottom: 0; } }
+
+@media only screen and (min-width: 1248px) {
+  .visualisatie-right {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 7em;
+    margin-left: 2em; } }
 
 .pie-chart-viz-container {
   display: flex;
