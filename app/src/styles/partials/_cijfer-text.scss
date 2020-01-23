@@ -1,5 +1,8 @@
 .cijfer-text-container {
 	margin-top: 1em;
+	@include mq("desktop"){
+		margin-top: 5em;
+	}
 
 
 	.numbers {
