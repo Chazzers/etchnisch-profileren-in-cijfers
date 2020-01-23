@@ -1,3 +1,35 @@
+header {
+  background-color: #000;
+  padding: 1em; }
+  header .flex-parent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+    header .flex-parent .flex-child {
+      flex: 1; }
+      header .flex-parent .flex-child:first-of-type {
+        padding-bottom: 1em; }
+      header .flex-parent .flex-child .logo {
+        background: left/contain no-repeat url("../images/logo.svg");
+        width: 100%;
+        height: 5em; }
+    header .flex-parent .titles h1 {
+      color: #fff33d;
+      font-size: 1.5em;
+      text-transform: uppercase; }
+    header .flex-parent .titles h2 {
+      color: #fff;
+      font-size: 1.25em; }
+
+@media only screen and (min-width: 1248px) {
+  .inleiding h1 {
+    margin-top: 2em; } }
+
+@media only screen and (min-width: 1248px) {
+  .inleiding p {
+    margin-top: 2em;
+    margin-bottom: 1em; } }
+
 .container {
   margin: 0 1em; }
   @media only screen and (min-width: 768px) {
@@ -27,6 +59,12 @@
 
 .video-container {
   height: 80%; }
+  @media only screen and (min-width: 1248px) {
+    .video-container {
+      width: 800px;
+      height: 500px;
+      margin: auto;
+      margin-bottom: 2em; } }
   .video-container video {
     width: 100%;
     height: 100%; }
@@ -227,9 +265,6 @@ html {
 .pie-chart-viz-container {
   display: flex;
   flex-direction: column; }
-  @media only screen and (min-width: 1248px) {
-    .pie-chart-viz-container {
-      margin-top: 5em; } }
   .pie-chart-viz-container .pie-chart-container {
     flex: 1;
     height: 300px; }
@@ -240,10 +275,6 @@ html {
     .pie-chart-viz-container .pie-chart-container .pie-chart img {
       width: 100%;
       height: 100%; }
-
-@media only screen and (min-width: 1248px) {
-  .barchart-viz-container {
-    margin-top: 5em; } }
 
 .barchart-viz-container .barchart-container {
   margin-bottom: 1em; }
@@ -325,29 +356,6 @@ div.tooltip {
   .options label {
     padding-bottom: 1em; }
 
-header {
-  background-color: #000;
-  padding: 1em; }
-  header .flex-parent {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column; }
-    header .flex-parent .flex-child {
-      flex: 1; }
-      header .flex-parent .flex-child:first-of-type {
-        padding-bottom: 1em; }
-      header .flex-parent .flex-child .logo {
-        background: left/contain no-repeat url("../images/logo.svg");
-        width: 100%;
-        height: 5em; }
-    header .flex-parent .titles h1 {
-      color: #fff33d;
-      font-size: 1.5em;
-      text-transform: uppercase; }
-    header .flex-parent .titles h2 {
-      color: #fff;
-      font-size: 1.25em; }
-
 .bold {
   font-weight: 500; }
 
@@ -356,9 +364,6 @@ header {
 
 .cijfer-text-container {
   margin-top: 1em; }
-  @media only screen and (min-width: 1248px) {
-    .cijfer-text-container {
-      margin-top: 5em; } }
   .cijfer-text-container .numbers {
     display: flex; }
     @media only screen and (min-width: 1248px) {
