@@ -1407,7 +1407,7 @@ function executeCounterVertrouwen(amount) {
 }
 
 function changeTopic() {
-
+	let scrollPos = 0;
 	const currentTopic = document.querySelector("#" + this.value)
 
 	d3.selectAll(".topic-container").classed("active", false);
@@ -1415,6 +1415,7 @@ function changeTopic() {
 	d3.selectAll(".onderwerp-buttons-container").classed("footer", false);
 
 	currentTopic.classList.add("active")
+	currentTopic.scrollIntoView({block: "start", behavior: "smooth"});
 
 	d3.selectAll("svg").remove();
 
@@ -1423,14 +1424,29 @@ function changeTopic() {
 			top: 50,
 			bottom: 50
 		})
-		inView(".counter").on("enter", () =>{
-			if(inView.is(counterAanleiding1el) || inView.is(counterAanleiding3el)) {
-				executeCounterAanleiding(632);
-			} else if(inView.is(counterAanleiding2el)) {
-				executeCounterAanleiding(370);
-			} else if(inView.is(counterAanleiding4el)) {
-				executeCounterAanleiding(220);
+		inView(".counter").on("enter", () => {
+			if((document.body.getBoundingClientRect()).top > scrollPos) {
+				if(inView.is(counterAanleiding1el)) {
+					executeCounterAanleiding(632);
+				} else if(inView.is(counterAanleiding2el)) {
+					executeCounterAanleiding(370);
+				} else if(inView.is(counterAanleiding3el)) {
+					executeCounterAanleiding(632);
+				} else if(inView.is(counterAanleiding4el)) {
+					executeCounterAanleiding(220);
+				}
+			} else {
+				if(inView.is(counterAanleiding4el)) {
+					executeCounterAanleiding(220);
+				} else if(inView.is(counterAanleiding3el)) {
+					executeCounterAanleiding(632);
+				} else if(inView.is(counterAanleiding2el)) {
+					executeCounterAanleiding(370);
+				} else if(inView.is(counterAanleiding1el)) {
+					executeCounterAanleiding(632);
+				}
 			}
+			scrollPos = (document.body.getBoundingClientRect()).top;
 		})
 	} else if(this.value === "controle") {
 		inView.offset({
@@ -1452,19 +1468,36 @@ function changeTopic() {
 			bottom: 50
 		})
 		inView(".counter").on("enter", () =>{
-			if(inView.is(counterBeleving1el)) {
-				executeCounterBeleving(625);
-			} else if(inView.is(counterBeleving2el)) {
-				executeCounterBeleving(621);
-			} else if(inView.is(counterBeleving3el)) {
-				executeCounterBeleving(616);
-			} else if(inView.is(counterBeleving4el)) {
-				executeCounterBeleving(408);
-			} else if(inView.is(counterBeleving5el)) {
-				executeCounterBeleving(400);
-			} else if(inView.is(counterBeleving6el)) {
-				executeCounterBeleving(401);
+			if((document.body.getBoundingClientRect()).top > scrollPos) {
+				if(inView.is(counterBeleving1el)) {
+					executeCounterBeleving(625);
+				} else if(inView.is(counterBeleving2el)) {
+					executeCounterBeleving(621);
+				} else if(inView.is(counterBeleving3el)) {
+					executeCounterBeleving(616);
+				} else if(inView.is(counterBeleving4el)) {
+					executeCounterBeleving(408);
+				} else if(inView.is(counterBeleving5el)) {
+					executeCounterBeleving(400);
+				} else if(inView.is(counterBeleving6el)) {
+					executeCounterBeleving(401);
+				}
+			} else {
+				if(inView.is(counterBeleving6el)) {
+					executeCounterBeleving(401);
+				} else if(inView.is(counterBeleving5el)) {
+					executeCounterBeleving(400);
+				} else if(inView.is(counterBeleving4el)) {
+					executeCounterBeleving(408);
+				} else if(inView.is(counterBeleving3el)) {
+					executeCounterBeleving(616);
+				} else if(inView.is(counterBeleving2el)) {
+					executeCounterBeleving(621);
+				} else if(inView.is(counterBeleving1el)) {
+					executeCounterBeleving(625);
+				}
 			}
+			scrollPos = (document.body.getBoundingClientRect()).top;
 		})
 	} else if(this.value === "ervaring") {
 		inView.offset({
@@ -1472,11 +1505,20 @@ function changeTopic() {
 			bottom: 50
 		})
 		inView(".counter").on("enter", () =>{
-			if(inView.is(counterErvaring1el)) {
-				executeCounterErvaring(399);
-			} else if(inView.is(counterErvaring2el)) {
-				executeCounterErvaring(408);
+			if((document.body.getBoundingClientRect()).top > scrollPos) {
+				if(inView.is(counterErvaring1el)) {
+					executeCounterErvaring(399);
+				} else if(inView.is(counterErvaring2el)) {
+					executeCounterErvaring(408);
+				}
+			} else {
+				if(inView.is(counterErvaring2el)) {
+					executeCounterErvaring(408);
+				} else if(inView.is(counterErvaring1el)) {
+					executeCounterErvaring(399);
+				}	
 			}
+			scrollPos = (document.body.getBoundingClientRect()).top;	
 		})
 	} else if(this.value === "vertrouwen") {
 		createHeatmap();
@@ -1485,11 +1527,32 @@ function changeTopic() {
 			bottom: 50
 		})
 		inView(".counter").on("enter", () => {
-			if(inView.is(counterVertrouwen1el) || inView.is(counterVertrouwen2el) || inView.is(counterVertrouwen3el) || inView.is(counterVertrouwen5el)) {
-				executeCounterVertrouwen(1643)
-			} else if(inView.is(counterVertrouwen4el)) {
-				executeCounterVertrouwen(1654)
+			if((document.body.getBoundingClientRect()).top > scrollPos) {
+				if(inView.is(counterVertrouwen1el)) {
+					executeCounterVertrouwen(1643)
+				} else if(inView.is(counterVertrouwen2el)) {
+					executeCounterVertrouwen(1643)
+				} else if(inView.is(counterVertrouwen3el)) {
+					executeCounterVertrouwen(1643)
+				} else if(inView.is(counterVertrouwen4el)) {
+					executeCounterVertrouwen(1654)
+				} else if(inView.is(counterVertrouwen5el)) {
+					executeCounterVertrouwen(1643)
+				}
+			} else {
+				if(inView.is(counterVertrouwen5el)) {
+					executeCounterVertrouwen(1643)
+				} else if(inView.is(counterVertrouwen4el)) {
+					executeCounterVertrouwen(1654)
+				} else if(inView.is(counterVertrouwen3el)) {
+					executeCounterVertrouwen(1643)
+				} else if(inView.is(counterVertrouwen2el)) {
+					executeCounterVertrouwen(1643)
+				} else if(inView.is(counterVertrouwen1el)) {
+					executeCounterVertrouwen(1643)
+				}
 			}
+			scrollPos = (document.body.getBoundingClientRect()).top;
 		})
 	}
 }
