@@ -112,7 +112,7 @@ h2 {
   font-size: 1.5em; }
 
 h3 {
-  font-size: 1.25em; }
+  font-size: 1.5em; }
 
 @media only screen and (min-width: 480px) {
   p {
@@ -120,9 +120,9 @@ h3 {
   h1 {
     font-size: 2.5em; }
   h2 {
-    font-size: 1.75em; }
+    font-size: 2em; }
   h3 {
-    font-size: 1.375em; }
+    font-size: 1.8em; }
   .counter-container p {
     font-size: 1em; }
   .counter-container .counter {
@@ -368,6 +368,10 @@ div.tooltip {
     width: 20%;
     height: 20%;
     margin: auto; }
+
+@media only screen and (min-width: 768px) {
+  .view-height {
+    margin-bottom: 2em; } }
 
 .bold {
   font-weight: 500; }

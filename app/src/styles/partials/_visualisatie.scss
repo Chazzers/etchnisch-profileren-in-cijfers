@@ -29,7 +29,6 @@
 	}
 	p {
 		margin-bottom: 0;
-
 	}
 }
 
@@ -112,9 +111,6 @@
 	display: flex;
 	flex-direction: column;
 
-	// @include mq("desktop"){
-	// 	margin-top: 5em;
-	// }
 	.pie-chart-container {
 		flex: 1;
 		height: 300px;
@@ -129,9 +125,6 @@
 				height: 100%;
 			}
 		}
-	}
-	.pie-chart-legend {
-
 	}
 }
 .barchart-viz-container {
@@ -167,5 +160,11 @@
 		width: 20%;
 		height: 20%;
 		margin: auto;
+	}
+}
+
+.view-height {
+	@include mq("tablet"){
+		margin-bottom: 2em;
 	}
 }
